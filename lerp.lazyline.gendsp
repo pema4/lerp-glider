@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "dsp.gen",
-		"rect" : [ 59.0, 119.0, 1005.0, 589.0 ],
+		"rect" : [ 59.0, 119.0, 1249.0, 589.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -19,7 +19,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 690.0, 67.0, 518.0, 60.0 ],
+					"patching_rect" : [ 705.0, 75.0, 518.0, 60.0 ],
 					"text" : "Action:\n0 - do nothing (just advance the ramp)\n1 - restart the ramp, with target/duration passed as parameters\n2 - change the ramp speed, remaining ramp duration will be scaled according to new duration"
 				}
 
@@ -31,8 +31,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 650.0, 14.0, 139.0, 22.0 ],
-					"text" : "param Duration @min 0."
+					"patching_rect" : [ 660.0, 30.0, 137.0, 22.0 ],
+					"text" : "param duration @min 0."
 				}
 
 			}
@@ -43,8 +43,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 450.0, 14.0, 79.0, 22.0 ],
-					"text" : "param Target"
+					"patching_rect" : [ 450.0, 30.0, 77.0, 22.0 ],
+					"text" : "param target"
 				}
 
 			}
@@ -55,7 +55,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 250.0, 14.0, 129.0, 22.0 ],
+					"patching_rect" : [ 240.0, 30.0, 129.0, 22.0 ],
 					"text" : "in 2 @comment Action"
 				}
 
@@ -66,7 +66,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 50.0, 530.0, 35.0, 22.0 ],
+					"patching_rect" : [ 30.0, 555.0, 35.0, 22.0 ],
 					"text" : "out 1"
 				}
 
@@ -82,7 +82,7 @@
 					"numinlets" : 4,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 50.0, 59.0, 619.0, 450.0 ]
+					"patching_rect" : [ 30.0, 75.0, 649.0, 450.0 ]
 				}
 
 			}
@@ -93,7 +93,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 50.0, 14.0, 162.0, 22.0 ],
+					"patching_rect" : [ 30.0, 30.0, 162.0, 22.0 ],
 					"text" : "in 1 @comment \"Time Delta\""
 				}
 
@@ -135,14 +135,8 @@
 
 			}
  ],
-		"originid" : "pat-41",
-		"saved_attribute_attributes" : 		{
-			"default_plcolor" : 			{
-				"expression" : ""
-			}
-
-		}
-
+		"originid" : "pat-4939",
+		"autosave" : 0
 	}
 
 }
