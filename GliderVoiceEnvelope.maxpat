@@ -14,45 +14,13 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 585.0, 165.0, 65.0, 22.0 ],
-					"saved_attribute_attributes" : 					{
-						"valueof" : 						{
-							"parameter_longname" : "test",
-							"parameter_modmode" : 3,
-							"parameter_osc_name" : "<default>",
-							"parameter_shortname" : "param",
-							"parameter_type" : 0
-						}
-
-					}
-,
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 1,
-						"parameter_mappable" : 0
-					}
-,
-					"text" : "param test",
-					"varname" : "param"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-8",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 585.0, 210.0, 35.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
-					"text" : "out 1"
+					"id" : "obj-10",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 300.0, 420.0, 29.5, 22.0 ],
+					"text" : "0"
 				}
 
 			}
@@ -277,7 +245,7 @@
 
 							}
  ],
-						"originid" : "pat-8057",
+						"originid" : "pat-4825",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -311,7 +279,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 330.0, 240.0, 153.0, 33.0 ],
+					"patching_rect" : [ 300.0, 240.0, 153.0, 33.0 ],
 					"text" : "Target envelope should be updated on every note-on."
 				}
 
@@ -472,8 +440,7 @@
 
 											}
  ],
-										"originid" : "pat-8473",
-										"autosave" : 0
+										"originid" : "pat-4829"
 									}
 ,
 									"patching_rect" : [ 240.0, 390.0, 159.0, 22.0 ],
@@ -742,7 +709,7 @@
 
 							}
  ],
-						"originid" : "pat-8059",
+						"originid" : "pat-4827",
 						"styles" : [ 							{
 								"name" : "m4ldefault",
 								"parentstyle" : "",
@@ -1076,7 +1043,7 @@
 
 							}
  ],
-						"originid" : "pat-8063",
+						"originid" : "pat-4831",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -1162,12 +1129,12 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 285.0, 165.0, 224.0, 22.0 ],
+					"patching_rect" : [ 285.0, 210.0, 224.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"attr_comment" : "(float) Target pitch"
 					}
 ,
-					"text" : "in 1 @attr_comment \"(float) Target pitch\""
+					"text" : "in 2 @attr_comment \"(float) Target pitch\""
 				}
 
 			}
@@ -1176,10 +1143,10 @@
 					"id" : "obj-40",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 240.0, 210.0, 29.5, 22.0 ],
-					"text" : "> 0"
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "" ],
+					"patching_rect" : [ 240.0, 210.0, 34.0, 22.0 ],
+					"text" : "sel 0"
 				}
 
 			}
@@ -1311,6 +1278,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-88", 0 ],
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-97", 0 ],
 					"source" : [ "obj-101", 0 ]
 				}
@@ -1396,15 +1370,21 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
-					"disabled" : 1,
 					"source" : [ "obj-4", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-39", 0 ],
+					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-40", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-39", 0 ],
+					"source" : [ "obj-40", 1 ]
 				}
 
 			}
@@ -1424,23 +1404,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
-					"source" : [ "obj-6", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-16", 1 ],
-					"order" : 1,
-					"source" : [ "obj-77", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
-					"order" : 0,
 					"source" : [ "obj-77", 0 ]
 				}
 
@@ -1478,21 +1442,7 @@
 
 			}
  ],
-		"originid" : "pat-8055",
-		"parameters" : 		{
-			"obj-92.1::obj-6" : [ "test", "param", 0 ],
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
+		"originid" : "pat-4823",
 		"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 		"saved_attribute_attributes" : 		{
 			"default_plcolor" : 			{
