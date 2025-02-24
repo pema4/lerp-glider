@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 119.0, 340.0, 347.0 ],
+		"rect" : [ 232.0, 259.0, 340.0, 347.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -51,7 +51,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 180.0, 300.0, 41.0, 22.0 ],
+									"patching_rect" : [ 180.0, 255.0, 41.0, 22.0 ],
 									"text" : "abs 0."
 								}
 
@@ -75,7 +75,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 180.0, 345.0, 75.0, 22.0 ],
+									"patching_rect" : [ 180.0, 330.0, 75.0, 22.0 ],
 									"text" : "* 1."
 								}
 
@@ -282,11 +282,25 @@
 
 							}
  ],
-						"originid" : "pat-1678",
-						"toolbaradditions" : [ "packagemanager", "browsegendsp" ]
+						"originid" : "pat-20",
+						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
+						"saved_attribute_attributes" : 						{
+							"default_plcolor" : 							{
+								"expression" : ""
+							}
+
+						}
+
 					}
 ,
 					"patching_rect" : [ 120.0, 195.0, 64.0, 22.0 ],
+					"saved_attribute_attributes" : 					{
+						"default_plcolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"saved_object_attributes" : 					{
 						"globalpatchername" : ""
 					}
@@ -442,8 +456,15 @@
 
 			}
  ],
-		"originid" : "pat-1676",
-		"toolbaradditions" : [ "packagemanager", "browsegendsp" ]
+		"originid" : "pat-18",
+		"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
+		"saved_attribute_attributes" : 		{
+			"default_plcolor" : 			{
+				"expression" : ""
+			}
+
+		}
+
 	}
 
 }
