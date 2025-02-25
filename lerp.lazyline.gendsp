@@ -1,0 +1,140 @@
+{
+	"patcher" : 	{
+		"fileversion" : 1,
+		"appversion" : 		{
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 4,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"classnamespace" : "dsp.gen",
+		"rect" : [ 34.0, 100.0, 1267.0, 634.0 ],
+		"gridsize" : [ 15.0, 15.0 ],
+		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 660.0, 585.0, 35.0, 22.0 ],
+					"text" : "out 3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 345.0, 585.0, 35.0, 22.0 ],
+					"text" : "out 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 705.0, 75.0, 518.0, 60.0 ],
+					"text" : "Action:\n0 - do nothing (just advance the ramp)\n1 - restart the ramp, with target/duration passed as parameters\n2 - change the ramp speed, remaining ramp duration will be scaled according to new duration"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 660.0, 30.0, 129.0, 22.0 ],
+					"text" : "in 2 @comment Action"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-15",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 30.0, 585.0, 35.0, 22.0 ],
+					"text" : "out 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"code" : "Param target(0);\r\nParam duration(0, min=0);\r\n\r\nHistory from(0), to(0), progress(0);\nHistory duration_reciprocal(1);\r\n\ntime_delta, action = in1, in2;\r\nprogress = min(1, progress + time_delta * duration_reciprocal);\r\ncurrent_value = mix(from, to, progress);\n\nif (action == 1) {\n\tfrom = current_value;\n\tto = target;\r\n\tprogress = 0;\n} \r\n\r\nif (action != 0) { // action == 1 || action == 2\n\tif (duration == 0) {\r\n\t\tduration_reciprocal = 0;\r\n\t\t\r\n\t\t// Instant jump to the end of the ramp.\r\n\t\tprogress = 1;\r\n\t\tcurrent_value = to;\n\t} else {\r\n\t\tduration_reciprocal = 1 / duration;\n\t}\n}\n\nout1 = current_value;\r\nout2 = progress < 1;\r\nout3 = action < 2;\n",
+					"fontface" : 0,
+					"fontname" : "<Monospaced>",
+					"fontsize" : 12.0,
+					"id" : "obj-7",
+					"maxclass" : "codebox",
+					"numinlets" : 2,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 30.0, 75.0, 649.0, 485.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 30.0, 30.0, 162.0, 22.0 ],
+					"text" : "in 1 @comment \"Time Delta\""
+				}
+
+			}
+ ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 1 ],
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-7", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-7", 1 ]
+				}
+
+			}
+ ],
+		"originid" : "pat-39026",
+		"autosave" : 0
+	}
+
+}
