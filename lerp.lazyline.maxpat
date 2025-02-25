@@ -14,13 +14,13 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-7",
+					"id" : "obj-15",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "int", "int" ],
-					"patching_rect" : [ 12.0, 480.0, 61.0, 22.0 ],
-					"text" : "change 0."
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 210.0, 480.0, 29.5, 22.0 ],
+					"text" : "i"
 				}
 
 			}
@@ -86,18 +86,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-8",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "bang", "bang" ],
-					"patching_rect" : [ 210.0, 480.0, 52.0, 22.0 ],
-					"text" : "togedge"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -113,7 +101,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "(bang) Signals End of Ramp",
+					"comment" : "(int) 1 - running, 0 - finished",
 					"id" : "obj-5",
 					"index" : 2,
 					"maxclass" : "outlet",
@@ -339,7 +327,7 @@
 							}
 , 							{
 								"box" : 								{
-									"code" : "Param target(0);\r\nParam duration(0, min=0);\r\n\r\nHistory from(0), to(0), progress(0);\nHistory duration_reciprocal(1);\r\n\ntime_delta, action = in1, in2;\r\nprogress = min(1, progress + time_delta * duration_reciprocal);\r\ncurrent_value = mix(from, to, progress);\n\nif (action == 1) {\n\tfrom = current_value;\n\tto = target;\r\n\tprogress = 0;\n} \r\n\r\nif (action == 1 || action == 2) {\n\tif (duration == 0) {\r\n\t\tduration_reciprocal = 0;\r\n\t\t\r\n\t\t// Instant jump to the end of the ramp.\r\n\t\tprogress = 1;\r\n\t\tcurrent_value = to;\n\t} else {\r\n\t\tduration_reciprocal = 1 / duration;\n\t}\n}\n\nout1, out2 = current_value, progress >= 1;\n",
+									"code" : "Param target(0);\r\nParam duration(0, min=0);\r\n\r\nHistory from(0), to(0), progress(0);\nHistory duration_reciprocal(1);\r\n\ntime_delta, action = in1, in2;\r\nprogress = min(1, progress + time_delta * duration_reciprocal);\r\ncurrent_value = mix(from, to, progress);\n\nif (action == 1) {\n\tfrom = current_value;\n\tto = target;\r\n\tprogress = 0;\n} \r\n\r\nif (action == 1 || action == 2) {\n\tif (duration == 0) {\r\n\t\tduration_reciprocal = 0;\r\n\t\t\r\n\t\t// Instant jump to the end of the ramp.\r\n\t\tprogress = 1;\r\n\t\tcurrent_value = to;\n\t} else {\r\n\t\tduration_reciprocal = 1 / duration;\n\t}\n}\n\nout1, out2 = current_value, progress < 1;\n",
 									"fontface" : 0,
 									"fontname" : "<Monospaced>",
 									"fontsize" : 12.0,
@@ -394,7 +382,7 @@
 
 							}
  ],
-						"originid" : "pat-2919",
+						"originid" : "pat-35150",
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
 								"expression" : ""
@@ -451,6 +439,29 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"order" : 0,
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"order" : 1,
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"source" : [ "obj-174", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-246", 0 ],
 					"order" : 1,
 					"source" : [ "obj-174", 0 ]
@@ -462,13 +473,6 @@
 					"destination" : [ "obj-3", 0 ],
 					"order" : 0,
 					"source" : [ "obj-174", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
-					"source" : [ "obj-174", 1 ]
 				}
 
 			}
@@ -642,24 +646,8 @@
 				}
 
 			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
-					"order" : 0,
-					"source" : [ "obj-8", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-5", 0 ],
-					"order" : 1,
-					"source" : [ "obj-8", 0 ]
-				}
-
-			}
  ],
-		"originid" : "pat-2917",
+		"originid" : "pat-35148",
 		"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 		"saved_attribute_attributes" : 		{
 			"default_plcolor" : 			{
