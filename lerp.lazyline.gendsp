@@ -61,12 +61,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-8",
-					"linecount" : 4,
+					"linecount" : 5,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 705.0, 75.0, 518.0, 60.0 ],
-					"text" : "Action:\n0 - do nothing (just advance the ramp)\n1 - restart the ramp, with target/duration passed as parameters\n2 - change the ramp speed, remaining ramp duration will be scaled according to new duration"
+					"patching_rect" : [ 705.0, 75.0, 518.0, 74.0 ],
+					"text" : "Action:\n0 - do nothing (just advance the ramp)\n1 - instantly restart the ramp with target\n2 - restart the ramp, with target/duration\n3 - change the ramp speed, remaining ramp duration will be scaled according to new duration"
 				}
 
 			}
@@ -95,7 +95,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "History from(0), to(0), progress(0);\nHistory duration_reciprocal(1);\r\n\ntime_delta, action, target, duration = in1, in2, in3, in4;\r\nprogress = min(1, progress + time_delta * duration_reciprocal);\r\ncurrent_value = mix(from, to, progress);\n\nif (action == 1) {\n\tfrom = current_value;\n\tto = target;\r\n\tprogress = 0;\n} \r\n\r\nif (action != 0) { // action == 1 || action == 2\n\tif (duration == 0) {\r\n\t\tduration_reciprocal = 0;\r\n\t\t\r\n\t\t// Instant jump to the end of the ramp.\r\n\t\tprogress = 1;\r\n\t\tcurrent_value = to;\n\t} else {\r\n\t\tduration_reciprocal = 1 / duration;\n\t}\n}\n\nout1 = current_value;\r\nout2 = progress < 1;\r\nout3 = action < 2;\n",
+					"code" : "History from(0), to(0), progress(0);\nHistory duration_reciprocal(1);\r\n\ntime_delta, action, target, duration = in1, in2, in3, in4;\r\nprogress = min(1, progress + time_delta * duration_reciprocal);\r\ncurrent_value = mix(from, to, progress);\n\r\n// on new target\nif (action == 1 || action == 2) {\n\tfrom = current_value;\n\tto = target;\r\n\tprogress = 0;\n}\r\n\r\n// on duration change\r\nif (action == 1 || (action > 1 && duration == 0)) {\r\n\t// instant jump to the end of the ramp.\r\n\tduration_reciprocal = 0;\r\n\tprogress = 1;\r\n\tcurrent_value = to;\n} else if (action > 1) {\r\n\tduration_reciprocal = 1 / duration;\n}\n\nout1 = current_value;\r\nout2 = progress < 1;\r\nout3 = action != 3;\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -171,7 +171,7 @@
 
 			}
  ],
-		"originid" : "pat-815",
+		"originid" : "pat-10923",
 		"autosave" : 0
 	}
 
