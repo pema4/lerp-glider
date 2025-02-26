@@ -10,15 +10,27 @@
 		}
 ,
 		"classnamespace" : "dsp.gen",
-		"rect" : [ 301.0, 118.0, 702.0, 710.0 ],
+		"rect" : [ 301.0, 118.0, 605.0, 710.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 450.0, 30.0, 121.0, 22.0 ],
+					"text" : "in 2 @comment Note"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 466.0, 656.0, 35.0, 22.0 ],
+					"patching_rect" : [ 450.0, 675.0, 35.0, 22.0 ],
 					"text" : "out 2"
 				}
 
@@ -29,23 +41,23 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 50.0, 656.0, 35.0, 22.0 ],
+					"patching_rect" : [ 30.0, 675.0, 35.0, 22.0 ],
 					"text" : "out 1"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"code" : "Data stack(128);\r\nHistory stack_size;\r\nParam note(min=0);\r\n\r\naction = in1;\r\n\r\nif (action == 0) {\r\n\t// remove\r\n\tfound = 0;\r\n\r\n\tfor (i = 0; i < stack_size; i += 1) {\r\n\t\tif (found) {\r\n\t\t\tpoke(stack, peek(stack, i), i - 1);\r\n\t\t}\r\n\r\n\t\tif (!found && peek(stack, i) == note) {\r\n\t\t\tfound = 1;\r\n\t\t}\r\n\t}\r\n\r\n\tif (found) {\r\n\t\tstack_size -= 1;\r\n\t}\r\n} else if (action == 1) {\r\n\t// add\r\n\tpoke(stack, note, stack_size);\r\n\tstack_size += 1;\r\n} else if (action == 2) {\r\n\t// remove last\r\n\tif (stack_size > 0) {\r\n\t\tstack_size -= 1;\r\n\t}\r\n} else if (action == 3) {\r\n\t// clear\r\n\tstack_size = 0;\r\n}\r\n\r\nout1 = peek(stack, stack_size - 1);\r\nout2 = stack_size;",
+					"code" : "Data stack(128);\r\nHistory stack_size;\r\n\r\naction, note = in1, in2;\r\n\r\nif (action == 0) {\r\n\t// remove\r\n\tfound = 0;\r\n\r\n\tfor (i = 0; i < stack_size; i += 1) {\r\n\t\tif (found) {\r\n\t\t\tpoke(stack, peek(stack, i), i - 1);\r\n\t\t}\r\n\r\n\t\tif (!found && peek(stack, i) == note) {\r\n\t\t\tfound = 1;\r\n\t\t}\r\n\t}\r\n\r\n\tif (found) {\r\n\t\tstack_size -= 1;\r\n\t}\r\n} else if (action == 1) {\r\n\t// add\r\n\tpoke(stack, note, stack_size);\r\n\tstack_size += 1;\r\n} else if (action == 2) {\r\n\t// remove last\r\n\tif (stack_size > 0) {\r\n\t\tstack_size -= 1;\r\n\t}\r\n} else if (action == 3) {\r\n\t// clear\r\n\tstack_size = 0;\r\n}\r\n\r\nout1 = peek(stack, stack_size - 1);\r\nout2 = stack_size;",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
 					"id" : "obj-5",
 					"maxclass" : "codebox",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 50.0, 55.0, 435.0, 581.0 ]
+					"patching_rect" : [ 30.0, 75.0, 439.0, 581.0 ]
 				}
 
 			}
@@ -56,7 +68,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 50.0, 14.0, 387.0, 22.0 ],
+					"patching_rect" : [ 30.0, 30.0, 387.0, 22.0 ],
 					"text" : "in 1 @comment \"Action (0 - remove, 1 - add, 2 - remove last, 3 - clear)\""
 				}
 
@@ -66,6 +78,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 1 ],
+					"source" : [ "obj-3", 0 ]
 				}
 
 			}
@@ -84,7 +103,7 @@
 
 			}
  ],
-		"originid" : "pat-12486",
+		"originid" : "pat-1089",
 		"saved_attribute_attributes" : 		{
 			"default_plcolor" : 			{
 				"expression" : ""

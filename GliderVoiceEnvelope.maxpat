@@ -344,7 +344,7 @@
 
 							}
  ],
-						"originid" : "pat-44175",
+						"originid" : "pat-1097",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -390,7 +390,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 449.0, 154.0, 423.0, 531.0 ],
+						"rect" : [ 448.0, 154.0, 359.0, 392.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -399,44 +399,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 195.0, 30.0, 89.0, 22.0 ],
+									"patching_rect" : [ 240.0, 240.0, 89.0, 22.0 ],
 									"text" : "buffer~ ---scale"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-36",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 120.0, 360.0, 29.5, 22.0 ],
-									"text" : "0."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-27",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 150.0, 180.0, 163.0, 33.0 ],
-									"text" : "0.0001 < 1/8096 (minimal hi-res pitchbend increment)"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-15",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 120.0, 225.0, 124.0, 22.0 ],
-									"text" : "sel 0. @fuzzy 0.0001"
 								}
 
 							}
@@ -444,35 +408,11 @@
 								"box" : 								{
 									"id" : "obj-88",
 									"maxclass" : "newobj",
-									"numinlets" : 1,
+									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 225.0, 315.0, 80.0, 22.0 ],
+									"patching_rect" : [ 120.0, 240.0, 94.0, 22.0 ],
 									"text" : "gen Quantize"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-74",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "float" ],
-									"patching_rect" : [ 225.0, 360.0, 139.0, 22.0 ],
-									"text" : "- 0."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-51",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "float" ],
-									"patching_rect" : [ 225.0, 270.0, 75.0, 22.0 ],
-									"text" : "+ 0."
 								}
 
 							}
@@ -522,7 +462,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 345.0, 90.0, 50.0, 22.0 ]
+									"patching_rect" : [ 195.0, 90.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -536,7 +476,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 345.0, 30.0, 30.0, 30.0 ]
+									"patching_rect" : [ 195.0, 30.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -548,7 +488,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 30.0, 435.0, 30.0, 30.0 ]
+									"patching_rect" : [ 30.0, 315.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -575,38 +515,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-51", 1 ],
-									"order" : 1,
+									"destination" : [ "obj-88", 1 ],
 									"source" : [ "obj-10", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-74", 1 ],
-									"order" : 0,
-									"source" : [ "obj-10", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-36", 0 ],
-									"source" : [ "obj-15", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-51", 0 ],
-									"source" : [ "obj-15", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-15", 0 ],
-									"source" : [ "obj-21", 1 ]
 								}
 
 							}
@@ -614,6 +524,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-88", 0 ],
+									"source" : [ "obj-21", 1 ]
 								}
 
 							}
@@ -641,33 +558,12 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"source" : [ "obj-36", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-88", 0 ],
-									"source" : [ "obj-51", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-2", 0 ],
-									"source" : [ "obj-74", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-74", 0 ],
 									"source" : [ "obj-88", 0 ]
 								}
 
 							}
  ],
-						"originid" : "pat-44177",
+						"originid" : "pat-1099",
 						"styles" : [ 							{
 								"name" : "m4ldefault",
 								"parentstyle" : "",
@@ -720,7 +616,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 579.0, 177.0, 277.0, 615.0 ],
+						"rect" : [ 578.0, 177.0, 277.0, 615.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -1085,7 +981,7 @@
 
 							}
  ],
-						"originid" : "pat-44179",
+						"originid" : "pat-1103",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -1380,7 +1276,7 @@
 
 			}
  ],
-		"originid" : "pat-44173",
+		"originid" : "pat-1095",
 		"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 		"saved_attribute_attributes" : 		{
 			"default_plcolor" : 			{

@@ -14,6 +14,30 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 660.0, 30.0, 141.0, 22.0 ],
+					"text" : "in 4 @comment Duration"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 450.0, 30.0, 129.0, 22.0 ],
+					"text" : "in 3 @comment Target"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -53,7 +77,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 660.0, 30.0, 129.0, 22.0 ],
+					"patching_rect" : [ 240.0, 30.0, 129.0, 22.0 ],
 					"text" : "in 2 @comment Action"
 				}
 
@@ -71,13 +95,13 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "Param target(0);\r\nParam duration(0, min=0);\r\n\r\nHistory from(0), to(0), progress(0);\nHistory duration_reciprocal(1);\r\n\ntime_delta, action = in1, in2;\r\nprogress = min(1, progress + time_delta * duration_reciprocal);\r\ncurrent_value = mix(from, to, progress);\n\nif (action == 1) {\n\tfrom = current_value;\n\tto = target;\r\n\tprogress = 0;\n} \r\n\r\nif (action != 0) { // action == 1 || action == 2\n\tif (duration == 0) {\r\n\t\tduration_reciprocal = 0;\r\n\t\t\r\n\t\t// Instant jump to the end of the ramp.\r\n\t\tprogress = 1;\r\n\t\tcurrent_value = to;\n\t} else {\r\n\t\tduration_reciprocal = 1 / duration;\n\t}\n}\n\nout1 = current_value;\r\nout2 = progress < 1;\r\nout3 = action < 2;\n",
+					"code" : "History from(0), to(0), progress(0);\nHistory duration_reciprocal(1);\r\n\ntime_delta, action, target, duration = in1, in2, in3, in4;\r\nprogress = min(1, progress + time_delta * duration_reciprocal);\r\ncurrent_value = mix(from, to, progress);\n\nif (action == 1) {\n\tfrom = current_value;\n\tto = target;\r\n\tprogress = 0;\n} \r\n\r\nif (action != 0) { // action == 1 || action == 2\n\tif (duration == 0) {\r\n\t\tduration_reciprocal = 0;\r\n\t\t\r\n\t\t// Instant jump to the end of the ramp.\r\n\t\tprogress = 1;\r\n\t\tcurrent_value = to;\n\t} else {\r\n\t\tduration_reciprocal = 1 / duration;\n\t}\n}\n\nout1 = current_value;\r\nout2 = progress < 1;\r\nout3 = action < 2;\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
 					"id" : "obj-7",
 					"maxclass" : "codebox",
-					"numinlets" : 2,
+					"numinlets" : 4,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 30.0, 75.0, 649.0, 485.0 ]
@@ -113,6 +137,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-7", 2 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 3 ],
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
 					"source" : [ "obj-7", 0 ]
 				}
@@ -133,7 +171,7 @@
 
 			}
  ],
-		"originid" : "pat-39026",
+		"originid" : "pat-815",
 		"autosave" : 0
 	}
 
