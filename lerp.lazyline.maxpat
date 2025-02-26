@@ -177,7 +177,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "float", "float", "float" ],
 					"patching_rect" : [ 90.0, 390.0, 199.0, 22.0 ],
-					"text" : "gen lerp.lazyline"
+					"text" : "gen @gen LazyLine"
 				}
 
 			}
@@ -459,7 +459,7 @@
 
 			}
  ],
-		"originid" : "pat-13197",
+		"originid" : "pat-13506",
 		"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 		"saved_attribute_attributes" : 		{
 			"default_plcolor" : 			{
