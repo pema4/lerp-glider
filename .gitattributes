@@ -1,3 +1,4 @@
 *.maxpat              diff=maxpat
+*.gendsp              diff=maxpat
 *.amxd                diff=amxd
 *.als                 diff=als

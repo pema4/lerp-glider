@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 221.0, 164.0, 636.0, 616.0 ],
+		"rect" : [ 221.0, 164.0, 1031.0, 591.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -111,12 +111,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-23",
-					"linecount" : 6,
+					"linecount" : 5,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 405.0, 30.0, 367.0, 87.0 ],
-					"text" : "Messages:\n1. bang - outputs current ramp value\n2. duration [float] - changes ramp time\n3. float - jump to value immediately, clears right inlet\n4. float float  - first float sets ramp target value, second float - ramp duration"
+					"patching_rect" : [ 450.0, 30.0, 559.0, 74.0 ],
+					"presentation_linecount" : 7,
+					"text" : "Messages:\nbang - outputs current ramp value\nf - jump to value immediately\nlist f f - first float sets ramp target value, second float - ramp duration\nduration f - change the ramp speed, remaining ramp duration will be scaled according to new duration"
 				}
 
 			}
@@ -177,7 +178,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "float", "float", "float" ],
 					"patching_rect" : [ 90.0, 390.0, 199.0, 22.0 ],
-					"text" : "gen @gen LazyLine"
+					"text" : "gen @gen LazyLine.gendsp"
 				}
 
 			}
@@ -189,7 +190,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 90.0, 30.0, 30.0, 30.0 ]
 				}
 
@@ -459,7 +460,7 @@
 
 			}
  ],
-		"originid" : "pat-13506",
+		"originid" : "pat-15235",
 		"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 		"saved_attribute_attributes" : 		{
 			"default_plcolor" : 			{
