@@ -10,29 +10,29 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 311.0, 196.0, 722.0, 495.0 ],
+		"rect" : [ 311.0, 196.0, 349.0, 495.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 165.0, 345.0, 99.0, 22.0 ],
+					"text" : "prepend duration"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 165.0, 345.0, 57.0, 22.0 ],
+					"patching_rect" : [ 165.0, 300.0, 57.0, 22.0 ],
 					"text" : "schedule"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-9",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 165.0, 300.0, 69.0, 22.0 ],
-					"text" : "duration $1"
 				}
 
 			}
@@ -384,7 +384,7 @@
 
 							}
  ],
-						"originid" : "pat-10181",
+						"originid" : "pat-251",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -481,7 +481,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 135.0, 30.0, 30.0, 30.0 ]
 				}
 
@@ -515,16 +515,16 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-50", 1 ],
-					"order" : 1,
+					"destination" : [ "obj-4", 0 ],
+					"order" : 0,
 					"source" : [ "obj-24", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
-					"order" : 0,
+					"destination" : [ "obj-50", 1 ],
+					"order" : 1,
 					"source" : [ "obj-24", 0 ]
 				}
 
@@ -538,7 +538,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
+					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-4", 0 ]
 				}
 
@@ -576,19 +576,19 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
-					"source" : [ "obj-7", 0 ]
+					"source" : [ "obj-6", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
-					"source" : [ "obj-9", 0 ]
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}
  ],
-		"originid" : "pat-10179",
+		"originid" : "pat-249",
 		"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 		"saved_attribute_attributes" : 		{
 			"default_plcolor" : 			{
