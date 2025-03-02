@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 311.0, 196.0, 349.0, 495.0 ],
+		"rect" : [ 400.0, 171.0, 349.0, 495.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -383,7 +383,7 @@
 
 							}
  ],
-						"originid" : "pat-10588",
+						"originid" : "pat-291",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -448,7 +448,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "(int) lazyline target",
+					"comment" : "(int) target pitch",
 					"id" : "obj-1",
 					"index" : 1,
 					"maxclass" : "inlet",
@@ -461,14 +461,15 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "(float) Current target pitch",
+					"comment" : "(float) Current pitch for relative duration mode",
 					"cool" : 1,
 					"id" : "obj-2",
+					"ignoreclick" : 1,
 					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 90.0, 30.0, 30.0, 30.0 ]
 				}
 
@@ -554,7 +555,7 @@
 
 			}
  ],
-		"originid" : "pat-10586",
+		"originid" : "pat-289",
 		"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 		"saved_attribute_attributes" : 		{
 			"default_plcolor" : 			{
