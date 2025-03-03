@@ -14,36 +14,24 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
+					"comment" : "",
+					"id" : "obj-5",
+					"index" : 2,
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 120.0, 420.0, 30.0, 30.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 128.0, 262.0, 150.0, 20.0 ],
+					"patching_rect" : [ 150.0, 226.0, 150.0, 20.0 ],
 					"text" : "Fire only when changed"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 120.0, 345.0, 99.0, 22.0 ],
-					"text" : "prepend duration"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-4",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 120.0, 300.0, 57.0, 22.0 ],
-					"text" : "schedule"
 				}
 
 			}
@@ -66,7 +54,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 364.0, 130.0, 813.0, 411.0 ],
+						"rect" : [ 1196.0, 295.0, 813.0, 411.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -383,7 +371,7 @@
 
 							}
  ],
-						"originid" : "pat-291",
+						"originid" : "pat-6131",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -454,7 +442,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "float" ],
 					"patching_rect" : [ 30.0, 30.0, 30.0, 30.0 ]
 				}
 
@@ -469,7 +457,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "float" ],
 					"patching_rect" : [ 90.0, 30.0, 30.0, 30.0 ]
 				}
 
@@ -512,7 +500,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
+					"destination" : [ "obj-5", 0 ],
 					"order" : 0,
 					"source" : [ "obj-24", 0 ]
 				}
@@ -535,27 +523,13 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"source" : [ "obj-4", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-50", 0 ]
 				}
 
 			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
-					"source" : [ "obj-6", 0 ]
-				}
-
-			}
  ],
-		"originid" : "pat-289",
+		"originid" : "pat-6129",
 		"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 		"saved_attribute_attributes" : 		{
 			"default_plcolor" : 			{
