@@ -49,7 +49,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "quantize(in_note) {\n\tBuffer scale(\"---scale\");\n\n\tmin_distance = 12;\n\tbest_offset = 127;\n\tfor (i = 0; i < dim(scale) && min_distance > 0.5; i += 1) {\n\t\tsd = peek(scale, i);\n\n\t\t// 12 * 100 > 127, so (12 * 100 + sd - in_note) % 12 is always positive\n\t\toffset = (12 * 100 + sd - in_note) % 12;\n\t\tif (offset >= 6) offset -= 12;\n\t\tdistance = abs(offset);\n\t\tif (distance < min_distance) {\n\t\t\tmin_distance = distance;\n\t\t\tbest_offset = offset;\n\t\t}\n\t}\n\n\treturn in_note + best_offset;\t\n}\n\nportamento = in1;\ntarget_pitch = in2;\n\n// apply amount and inversion\nportamento *= amount;\n\n// apply quantization\nif (quantize) {\n\tunquantized = portamento + target_pitch;\n\tquantized = quantize(unquantized);\n\tportamento = quantized - target_pitch;\n}\r\n\r\nchanged = delta(portamento) > 0.0001;\r\nif (quantize && retrig) {\r\n\tout1 = changed;\r\n}\n\r\nout2 = portamento;",
+					"code" : "quantize(in_note) {\n\tBuffer scale(\"---scale\");\n\n\tmin_distance = 12;\n\tbest_offset = 127;\n\tfor (i = 0; i < dim(scale) && min_distance > 0.5; i += 1) {\n\t\tsd = peek(scale, i);\n\n\t\t// 12 * 100 > 127, so (12 * 100 + sd - in_note) % 12 is always positive\n\t\toffset = (12 * 100 + sd - in_note) % 12;\n\t\tif (offset >= 6) offset -= 12;\n\t\tdistance = abs(offset);\n\t\tif (distance < min_distance) {\n\t\t\tmin_distance = distance;\n\t\t\tbest_offset = offset;\n\t\t}\n\t}\n\n\treturn in_note + best_offset;\t\n}\n\nportamento = in1;\ntarget_pitch = in2;\n\n// apply amount and inversion\nportamento *= amount;\n\n// apply quantization\nif (quantize) {\n\tunquantized = portamento + target_pitch;\n\tquantized = quantize(unquantized);\n\tportamento = quantized - target_pitch;\n}\r\n\r\nchanged = abs(delta(portamento)) > 0.0001;\r\nif (quantize && retrig) {\r\n\tout1 = changed;\r\n}\n\r\nout2 = portamento;",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -196,7 +196,7 @@
 
 			}
  ],
-		"originid" : "pat-19082",
+		"originid" : "pat-28515",
 		"autosave" : 0
 	}
 
