@@ -70,7 +70,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 735.0, 30.0, 167.0, 22.0 ],
-					"text" : "in 2 @comment \"Target pitch\""
+					"text" : "in 3 @comment \"Target pitch\""
 				}
 
 			}
@@ -106,7 +106,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 780.0, 720.0, 212.0, 22.0 ],
-					"text" : "in 3 @comment \"Incoming pitch bend\""
+					"text" : "in 4 @comment \"Incoming pitch bend\""
 				}
 
 			}
@@ -130,7 +130,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 45.0, 30.0, 158.0, 22.0 ],
-					"text" : "in 1 @comment Portamento"
+					"text" : "in 2 @comment Portamento"
 				}
 
 			}
@@ -196,7 +196,7 @@
 
 			}
  ],
-		"originid" : "pat-28515",
+		"originid" : "pat-6698",
 		"autosave" : 0
 	}
 
