@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 249.0, 285.0, 1329.0, 872.0 ],
+		"rect" : [ 249.0, 284.0, 1329.0, 872.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -239,7 +239,7 @@
 
 							}
  ],
-						"originid" : "pat-1594",
+						"originid" : "pat-2214",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -919,7 +919,7 @@
 
 											}
  ],
-										"originid" : "pat-1606",
+										"originid" : "pat-2226",
 										"saved_attribute_attributes" : 										{
 											"default_plcolor" : 											{
 												"expression" : ""
@@ -1188,7 +1188,7 @@
 
 							}
  ],
-						"originid" : "pat-1602",
+						"originid" : "pat-2222",
 						"styles" : [ 							{
 								"name" : "m4ldefault",
 								"parentstyle" : "",
@@ -1292,7 +1292,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1615.0, 367.0, 331.0, 649.0 ],
+						"rect" : [ 1615.0, 367.0, 348.0, 649.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -1665,7 +1665,7 @@
 
 							}
  ],
-						"originid" : "pat-1612",
+						"originid" : "pat-2232",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -1922,7 +1922,7 @@
 
 							}
  ],
-						"originid" : "pat-1618",
+						"originid" : "pat-2238",
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
 								"expression" : ""
@@ -2131,7 +2131,7 @@
 
 							}
  ],
-						"originid" : "pat-1620",
+						"originid" : "pat-2240",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -2640,7 +2640,7 @@
 
 			}
  ],
-		"originid" : "pat-1592",
+		"originid" : "pat-2212",
 		"styles" : [ 			{
 				"name" : "m4ldefault",
 				"parentstyle" : "",

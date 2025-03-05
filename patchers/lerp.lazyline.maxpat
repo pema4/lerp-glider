@@ -272,7 +272,7 @@
 							}
 , 							{
 								"box" : 								{
-									"code" : "History from(0), to(0), progress(0);\nHistory duration_reciprocal(1);\r\n\ntime_delta, action, target, duration = in1, in2, in3, in4;\r\nprogress = min(1, progress + time_delta * duration_reciprocal);\r\ncurrent_value = mix(from, to, progress);\n\r\n// on new target\nif (action == 1 || action == 2) {\n\tfrom = current_value;\n\tto = target;\r\n\tif (from != target) {\r\n\t\tprogress = 0;\t\r\n\t} else {\r\n\t\tprogress = 1;\r\n\t}\n}\r\n\r\n// on duration change\r\nif (action == 1 || (action > 1 && duration == 0)) {\r\n\t// instant jump to the end of the ramp.\r\n\tduration_reciprocal = 0;\r\n\tprogress = 1;\r\n\tcurrent_value = to;\n} else if (action > 1) {\r\n\tduration_reciprocal = 1 / duration;\n}\n\nout1 = current_value;\r\nout2 = progress < 1;\r\nout3 = action != 3;\n",
+									"code" : "History from(0), to(0), progress(0);\nHistory duration_reciprocal(1);\r\n\ntime_delta, action, target, duration = in1, in2, in3, in4;\r\nprogress = progress + time_delta * duration_reciprocal;\r\ncurrent_value = mix(from, to, clip(progress, 0, 1));\n\r\n// on new target\nif (action == 1 || action == 2) {\n\tfrom = current_value;\n\tto = target;\r\n\tif (from != target) {\r\n\t\tprogress = 0;\t\r\n\t} else {\r\n\t\tprogress = 1;\r\n\t}\n}\r\n\r\n// on duration change\r\nif (action == 1 || (action > 1 && duration == 0)) {\r\n\t// instant jump to the end of the ramp.\r\n\tduration_reciprocal = 0;\r\n\tprogress = 1;\r\n\tcurrent_value = to;\n} else if (action > 1) {\r\n\tduration_reciprocal = 1 / duration;\n}\n\nout1 = current_value;\r\nout2 = progress < 1;\r\nout3 = action != 3;\n",
 									"fontface" : 0,
 									"fontname" : "<Monospaced>",
 									"fontsize" : 12.0,
@@ -348,7 +348,7 @@
 
 							}
  ],
-						"originid" : "pat-461",
+						"originid" : "pat-1011",
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
 								"expression" : ""
@@ -641,7 +641,7 @@
 
 			}
  ],
-		"originid" : "pat-414",
+		"originid" : "pat-1009",
 		"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 		"saved_attribute_attributes" : 		{
 			"default_plcolor" : 			{
