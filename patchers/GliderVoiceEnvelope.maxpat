@@ -14,17 +14,6 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-7",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1079.099999999999909, 637.779999999999973, 106.0, 22.0 ],
-					"text" : "print @deltatime 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"color" : [ 1.0, 0.694117647058824, 0.0, 1.0 ],
 					"id" : "obj-63",
 					"maxclass" : "newobj",
@@ -214,7 +203,7 @@
 
 							}
  ],
-						"originid" : "pat-2148",
+						"originid" : "pat-4115",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -894,7 +883,7 @@
 
 											}
  ],
-										"originid" : "pat-2160",
+										"originid" : "pat-4127",
 										"saved_attribute_attributes" : 										{
 											"default_plcolor" : 											{
 												"expression" : ""
@@ -1163,7 +1152,7 @@
 
 							}
  ],
-						"originid" : "pat-2156",
+						"originid" : "pat-4123",
 						"styles" : [ 							{
 								"name" : "m4ldefault",
 								"parentstyle" : "",
@@ -1640,7 +1629,7 @@
 
 							}
  ],
-						"originid" : "pat-2166",
+						"originid" : "pat-4133",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -1885,7 +1874,7 @@
 
 							}
  ],
-						"originid" : "pat-2172",
+						"originid" : "pat-4139",
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
 								"expression" : ""
@@ -2094,7 +2083,7 @@
 
 							}
  ],
-						"originid" : "pat-2174",
+						"originid" : "pat-4141",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -2236,16 +2225,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"order" : 0,
-					"source" : [ "obj-16", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-88", 0 ],
-					"order" : 1,
 					"source" : [ "obj-16", 0 ]
 				}
 
@@ -2610,7 +2590,7 @@
 
 			}
  ],
-		"originid" : "pat-2146",
+		"originid" : "pat-4113",
 		"styles" : [ 			{
 				"name" : "m4ldefault",
 				"parentstyle" : "",
