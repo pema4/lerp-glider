@@ -10,9 +10,45 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 249.0, 285.0, 1240.0, 872.0 ],
+		"rect" : [ 249.0, 285.0, 1329.0, 872.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-79",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "float", "bang" ],
+					"patching_rect" : [ 1095.0, 750.0, 157.0, 22.0 ],
+					"text" : "buffer~ ---scale @samps 12"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1095.0, 690.0, 117.0, 22.0 ],
+					"text" : "prepend scalelength"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1095.0, 645.0, 93.0, 22.0 ],
+					"text" : "r ---scale-length"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"color" : [ 1.0, 0.694117647058824, 0.0, 1.0 ],
 					"id" : "obj-63",
@@ -203,7 +239,7 @@
 
 							}
  ],
-						"originid" : "pat-4115",
+						"originid" : "pat-1594",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -883,7 +919,7 @@
 
 											}
  ],
-										"originid" : "pat-4127",
+										"originid" : "pat-1606",
 										"saved_attribute_attributes" : 										{
 											"default_plcolor" : 											{
 												"expression" : ""
@@ -1152,7 +1188,7 @@
 
 							}
  ],
-						"originid" : "pat-4123",
+						"originid" : "pat-1602",
 						"styles" : [ 							{
 								"name" : "m4ldefault",
 								"parentstyle" : "",
@@ -1629,7 +1665,7 @@
 
 							}
  ],
-						"originid" : "pat-4133",
+						"originid" : "pat-1612",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -1688,9 +1724,21 @@
 						}
 ,
 						"classnamespace" : "dsp.gen",
-						"rect" : [ 59.0, 106.0, 1057.0, 863.0 ],
+						"rect" : [ 59.0, 106.0, 1285.0, 863.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 930.0, 165.0, 117.0, 22.0 ],
+									"text" : "param scalelength 0"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-2",
 									"maxclass" : "newobj",
@@ -1727,7 +1775,7 @@
 							}
 , 							{
 								"box" : 								{
-									"code" : "quantize(in_note) {\n\tBuffer scale(\"---scale\");\n\n\tmin_distance = 12;\n\tbest_offset = 127;\n\tfor (i = 0; i < dim(scale) && min_distance > 0.5; i += 1) {\n\t\tsd = peek(scale, i);\n\n\t\t// 12 * 100 > 127, so (12 * 100 + sd - in_note) % 12 is always positive\n\t\toffset = (12 * 100 + sd - in_note) % 12;\n\t\tif (offset >= 6) offset -= 12;\n\t\tdistance = abs(offset);\n\t\tif (distance < min_distance) {\n\t\t\tmin_distance = distance;\n\t\t\tbest_offset = offset;\n\t\t}\n\t}\n\n\treturn in_note + best_offset;\t\n}\n\nportamento = in1;\ntarget_pitch = in2;\n\n// apply amount and inversion\nportamento *= amount;\n\n// apply quantization\nif (quantize) {\n\tunquantized = portamento + target_pitch;\n\tquantized = quantize(unquantized);\n\tportamento = quantized - target_pitch;\n}\r\n\r\nchanged = abs(delta(portamento)) > 0.0001;\r\nif (quantize && retrig) {\r\n\tout1 = changed;\r\n}\n\r\nout2 = portamento;",
+									"code" : "quantize(in_note, scale_length) {\n\tBuffer scale(\"---scale\");\n\n\tmin_distance = 12;\n\tbest_offset = 127;\n\tfor (i = 0; i < scale_length && min_distance > 0.5; i += 1) {\n\t\tsd = peek(scale, i);\n\n\t\t// 12 * 100 > 127, so (12 * 100 + sd - in_note) % 12 is always positive\n\t\toffset = (12 * 100 + sd - in_note) % 12;\n\t\tif (offset >= 6) offset -= 12;\n\t\tdistance = abs(offset);\n\t\tif (distance < min_distance) {\n\t\t\tmin_distance = distance;\n\t\t\tbest_offset = offset;\n\t\t}\n\t}\n\n\treturn in_note + best_offset;\t\n}\n\nportamento = in1;\ntarget_pitch = in2;\n\n// apply amount and inversion\nportamento *= amount;\n\n// apply quantization\nif (quantize) {\n\tunquantized = portamento + target_pitch;\n\tquantized = quantize(unquantized, scalelength);\n\tportamento = quantized - target_pitch;\n}\r\n\r\nchanged = abs(delta(portamento)) > 0.0001;\r\nif (quantize && retrig) {\r\n\tout1 = changed;\r\n}\n\r\nout2 = portamento;",
 									"fontface" : 0,
 									"fontname" : "<Monospaced>",
 									"fontsize" : 12.0,
@@ -1874,7 +1922,7 @@
 
 							}
  ],
-						"originid" : "pat-4139",
+						"originid" : "pat-1618",
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
 								"expression" : ""
@@ -2083,7 +2131,7 @@
 
 							}
  ],
-						"originid" : "pat-4141",
+						"originid" : "pat-1620",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -2119,18 +2167,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 345.0, 405.0, 101.0, 22.0 ],
 					"text" : "prepend quantize"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-79",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 525.0, 750.0, 89.0, 22.0 ],
-					"text" : "buffer~ ---scale"
 				}
 
 			}
@@ -2206,6 +2242,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-46", 0 ],
 					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
+					"source" : [ "obj-12", 0 ]
 				}
 
 			}
@@ -2341,6 +2384,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-45", 0 ],
 					"source" : [ "obj-22", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-36", 3 ],
+					"source" : [ "obj-23", 0 ]
 				}
 
 			}
@@ -2590,7 +2640,7 @@
 
 			}
  ],
-		"originid" : "pat-4113",
+		"originid" : "pat-1592",
 		"styles" : [ 			{
 				"name" : "m4ldefault",
 				"parentstyle" : "",
