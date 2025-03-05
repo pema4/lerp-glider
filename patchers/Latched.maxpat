@@ -10,16 +10,40 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1131.0, 920.0, 287.0, 332.0 ],
+		"rect" : [ 635.0, 330.0, 444.0, 426.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 270.0, 225.0, 150.0, 33.0 ],
+					"text" : "With 'clear' message left buddy inlet is always cold"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "clear", "bang" ],
+					"patching_rect" : [ 195.0, 225.0, 51.0, 22.0 ],
+					"text" : "t clear b"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 180.0, 150.0, 34.0, 22.0 ],
+					"patching_rect" : [ 195.0, 150.0, 34.0, 22.0 ],
 					"text" : "sel 0"
 				}
 
@@ -80,7 +104,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 150.0, 195.0, 94.0, 22.0 ],
+					"patching_rect" : [ 150.0, 300.0, 96.0, 22.0 ],
 					"text" : "buddy"
 				}
 
@@ -93,7 +117,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 150.0, 270.0, 30.0, 30.0 ]
+					"patching_rect" : [ 150.0, 375.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -107,7 +131,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 225.0, 30.0, 30.0, 30.0 ]
+					"patching_rect" : [ 315.0, 30.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -151,7 +175,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 1 ],
+					"destination" : [ "obj-8", 0 ],
 					"source" : [ "obj-3", 0 ]
 				}
 
@@ -165,7 +189,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 1 ],
+					"destination" : [ "obj-8", 0 ],
 					"source" : [ "obj-6", 0 ]
 				}
 
@@ -177,8 +201,22 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 1 ],
+					"source" : [ "obj-8", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
  ],
-		"originid" : "pat-4638",
+		"originid" : "pat-2915",
 		"toolbaradditions" : [ "packagemanager", "browsegendsp" ]
 	}
 
