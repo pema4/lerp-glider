@@ -14,6 +14,17 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1079.099999999999909, 637.779999999999973, 106.0, 22.0 ],
+					"text" : "print @deltatime 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"color" : [ 1.0, 0.694117647058824, 0.0, 1.0 ],
 					"id" : "obj-63",
 					"maxclass" : "newobj",
@@ -203,7 +214,7 @@
 
 							}
  ],
-						"originid" : "pat-358",
+						"originid" : "pat-2148",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -545,7 +556,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1899.0, 402.0, 554.0, 654.0 ],
+						"rect" : [ 1336.0, 334.0, 554.0, 654.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -704,7 +715,7 @@
 										}
 ,
 										"classnamespace" : "dsp.gen",
-										"rect" : [ 59.0, 119.0, 671.0, 536.0 ],
+										"rect" : [ 59.0, 119.0, 707.0, 536.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
 												"box" : 												{
@@ -712,7 +723,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 480.0, 480.0, 35.0, 22.0 ],
+													"patching_rect" : [ 525.0, 480.0, 35.0, 22.0 ],
 													"text" : "out 4"
 												}
 
@@ -723,7 +734,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 330.0, 480.0, 35.0, 22.0 ],
+													"patching_rect" : [ 360.0, 480.0, 35.0, 22.0 ],
 													"text" : "out 3"
 												}
 
@@ -734,7 +745,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 180.0, 480.0, 35.0, 22.0 ],
+													"patching_rect" : [ 195.0, 480.0, 35.0, 22.0 ],
 													"text" : "out 2"
 												}
 
@@ -746,7 +757,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 480.0, 30.0, 28.0, 22.0 ],
+													"patching_rect" : [ 525.0, 30.0, 28.0, 22.0 ],
 													"text" : "in 4"
 												}
 
@@ -758,7 +769,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 330.0, 30.0, 28.0, 22.0 ],
+													"patching_rect" : [ 360.0, 30.0, 28.0, 22.0 ],
 													"text" : "in 3"
 												}
 
@@ -770,7 +781,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 180.0, 30.0, 28.0, 22.0 ],
+													"patching_rect" : [ 195.0, 30.0, 28.0, 22.0 ],
 													"text" : "in 2"
 												}
 
@@ -782,14 +793,14 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 555.0, 30.0, 93.0, 22.0 ],
+													"patching_rect" : [ 585.0, 30.0, 93.0, 22.0 ],
 													"text" : "param reversed"
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"code" : "// 0 - note on, 1 - reverse/unreverse\r\naction = in1;\r\nglobal_pitch, target_pitch = in2, in3;\r\ncurrent_portamento = in4;\r\n\r\npeak_portamento = global_pitch - target_pitch;\r\nif (action == 0) {\r\n\tcurrent_portamento = peak_portamento;\r\n\tout4 = 1; // gate is open on note on\r\n}\r\n\r\nif (reversed) {\r\n\t// from 0 to max_porta\r\n\tout3 = 0;\r\n\tout2 = current_portamento;\r\n\tout1 = peak_portamento;\r\n} else {\r\n\t// from max_porta down to 0\r\n\tout3 = peak_portamento;\r\n\tout2 = current_portamento;\r\n\tout1 = 0;\r\n}",
+													"code" : "// 0 - note on, 1 - reverse/unreverse\r\naction = in1;\r\nglobal_pitch, target_pitch = in2, in3;\r\ncurrent_portamento = in4;\r\n\r\npeak_portamento = global_pitch - target_pitch;\r\nif (action == 0) {\r\n\tout4 = 1; // gate is open on note on\r\n}\r\n\r\nif (reversed) {\r\n\t// from 0 to max_porta\r\n\tout3 = 0;\r\n\tout2 = action == 0 ? 0 : current_portamento;\r\n\tout1 = peak_portamento;\r\n} else {\r\n\t// from max_porta down to 0\r\n\tout3 = peak_portamento;\r\n\tout2 = action == 0 ? peak_portamento : current_portamento;\r\n\tout2 = current_portamento;\r\n\tout1 = 0;\r\n}",
 													"fontface" : 0,
 													"fontname" : "<Monospaced>",
 													"fontsize" : 12.0,
@@ -798,7 +809,7 @@
 													"numinlets" : 4,
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "" ],
-													"patching_rect" : [ 30.0, 90.0, 469.0, 360.0 ]
+													"patching_rect" : [ 30.0, 90.0, 514.0, 360.0 ]
 												}
 
 											}
@@ -883,7 +894,7 @@
 
 											}
  ],
-										"originid" : "pat-370",
+										"originid" : "pat-2160",
 										"saved_attribute_attributes" : 										{
 											"default_plcolor" : 											{
 												"expression" : ""
@@ -1152,7 +1163,7 @@
 
 							}
  ],
-						"originid" : "pat-366",
+						"originid" : "pat-2156",
 						"styles" : [ 							{
 								"name" : "m4ldefault",
 								"parentstyle" : "",
@@ -1629,7 +1640,7 @@
 
 							}
  ],
-						"originid" : "pat-376",
+						"originid" : "pat-2166",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -1874,7 +1885,7 @@
 
 							}
  ],
-						"originid" : "pat-577",
+						"originid" : "pat-2172",
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
 								"expression" : ""
@@ -2083,7 +2094,7 @@
 
 							}
  ],
-						"originid" : "pat-380",
+						"originid" : "pat-2174",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -2225,7 +2236,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"order" : 0,
+					"source" : [ "obj-16", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-88", 0 ],
+					"order" : 1,
 					"source" : [ "obj-16", 0 ]
 				}
 
@@ -2590,7 +2610,7 @@
 
 			}
  ],
-		"originid" : "pat-356",
+		"originid" : "pat-2146",
 		"styles" : [ 			{
 				"name" : "m4ldefault",
 				"parentstyle" : "",
