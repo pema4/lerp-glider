@@ -371,7 +371,7 @@
 
 							}
  ],
-						"originid" : "pat-5789",
+						"originid" : "pat-13889",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -418,7 +418,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 30.0, 300.0, 64.0, 22.0 ],
-					"text" : "pack 0 0."
+					"text" : "pack 0. 0."
 				}
 
 			}
@@ -436,7 +436,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "(int) target pitch",
+					"comment" : "(float) Target pitch",
 					"id" : "obj-1",
 					"index" : 1,
 					"maxclass" : "inlet",
@@ -529,7 +529,7 @@
 
 			}
  ],
-		"originid" : "pat-5787",
+		"originid" : "pat-13887",
 		"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 		"saved_attribute_attributes" : 		{
 			"default_plcolor" : 			{
