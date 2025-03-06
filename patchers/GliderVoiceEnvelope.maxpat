@@ -14,6 +14,18 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 1095.0, 450.0, 47.0, 22.0 ],
+					"text" : "delay 0"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-79",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -31,7 +43,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1095.0, 690.0, 117.0, 22.0 ],
+					"patching_rect" : [ 1155.0, 450.0, 117.0, 22.0 ],
 					"text" : "prepend scalelength"
 				}
 
@@ -43,7 +55,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1095.0, 645.0, 93.0, 22.0 ],
+					"patching_rect" : [ 1155.0, 375.0, 93.0, 22.0 ],
 					"text" : "r ---scale-length"
 				}
 
@@ -239,7 +251,7 @@
 
 							}
  ],
-						"originid" : "pat-4186",
+						"originid" : "pat-7673",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -333,7 +345,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 990.0, 330.0, 225.0, 74.0 ],
+					"patching_rect" : [ 990.0, 270.0, 225.0, 74.0 ],
 					"text" : "On pitch bend:\n1. disable internal metro (in p Trigger)\n2. emit portamento\n3. reenable internal metro after small timeout (greater than metro timeout)"
 				}
 
@@ -919,7 +931,7 @@
 
 											}
  ],
-										"originid" : "pat-4198",
+										"originid" : "pat-7685",
 										"saved_attribute_attributes" : 										{
 											"default_plcolor" : 											{
 												"expression" : ""
@@ -1188,7 +1200,7 @@
 
 							}
  ],
-						"originid" : "pat-4194",
+						"originid" : "pat-7681",
 						"styles" : [ 							{
 								"name" : "m4ldefault",
 								"parentstyle" : "",
@@ -1230,7 +1242,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1035.0, 420.0, 30.0, 30.0 ]
+					"patching_rect" : [ 1035.0, 435.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -1292,7 +1304,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1615.0, 367.0, 348.0, 649.0 ],
+						"rect" : [ 134.0, 172.0, 348.0, 649.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -1665,7 +1677,7 @@
 
 							}
  ],
-						"originid" : "pat-4204",
+						"originid" : "pat-7691",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -1922,7 +1934,7 @@
 
 							}
  ],
-						"originid" : "pat-4210",
+						"originid" : "pat-7697",
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
 								"expression" : ""
@@ -2131,7 +2143,7 @@
 
 							}
  ],
-						"originid" : "pat-4212",
+						"originid" : "pat-7699",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -2248,6 +2260,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-23", 0 ],
+					"order" : 0,
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"order" : 1,
 					"source" : [ "obj-12", 0 ]
 				}
 
@@ -2405,6 +2426,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-176", 2 ],
 					"source" : [ "obj-24", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-176", 2 ],
+					"source" : [ "obj-25", 0 ]
 				}
 
 			}
@@ -2640,7 +2668,7 @@
 
 			}
  ],
-		"originid" : "pat-4184",
+		"originid" : "pat-7671",
 		"styles" : [ 			{
 				"name" : "m4ldefault",
 				"parentstyle" : "",

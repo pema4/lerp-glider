@@ -1,8 +1,10 @@
 # Glider
 
-Flexible MPE portamento for Ableton Live.
+Flexible MPE portamento effect for Ableton Live 12.
 
 ![glider-large](images/glider-large.png)
+
+Glider generates MPE pitch bend automations that mimic portamento, glissando, legato playing, analog-like detuning, arpeggios and much more. Additionally, you can chain multiple Gliders together for infinitely complex effects and interactions.
 
 ## Setup
 
@@ -19,7 +21,9 @@ git config --local diff.als.textconv "python3 maxdevtools/maxdiff/als_textconv.p
 git config --local diff.als.binary true
 ```
 
-## Design Notes
+Currently, Glider requires Max 9 to run.
+
+## Architecture
 
 There are 15 per-voice pitch-bend envelopes and one global envelope.
 
@@ -28,3 +32,7 @@ The global envelope follows the pitch of the last pressed note (incoming note-on
 Each per-voice envelope starts when the device receives a note-on message. This envelope begins from the pitch value of the global envelope and converges to zero over a specified duration.
 
 Glider is designed for combining and chaining. In this case, a naive implementation using the standard Max line object results in O(N^2) time complexity (where N is the number of chained Glider devices). To overcome this, we implemented a custom demand-rate variant of the line object. When the rate of incoming pitch-bend messages is high enough, the internal metronome turns off.
+
+## Timing
+
+Processing is synchronous: glide is computed and emitted in the same event as the incoming MIDI message (note on/off and pitch bend). Theoretically, this means the generated pitch bend is consistent even for short notes.
