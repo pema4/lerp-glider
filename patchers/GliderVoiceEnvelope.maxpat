@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 249.0, 284.0, 1329.0, 872.0 ],
+		"rect" : [ 107.0, 100.0, 1329.0, 758.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -239,7 +239,7 @@
 
 							}
  ],
-						"originid" : "pat-2214",
+						"originid" : "pat-4186",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -581,7 +581,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1336.0, 334.0, 554.0, 654.0 ],
+						"rect" : [ 882.0, 204.0, 554.0, 654.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -825,7 +825,7 @@
 											}
 , 											{
 												"box" : 												{
-													"code" : "// 0 - note on, 1 - reverse/unreverse\r\naction = in1;\r\nglobal_pitch, target_pitch = in2, in3;\r\ncurrent_portamento = in4;\r\n\r\npeak_portamento = global_pitch - target_pitch;\r\nif (action == 0) {\r\n\tout4 = 1; // gate is open on note on\r\n}\r\n\r\nif (reversed) {\r\n\t// from 0 to max_porta\r\n\tout3 = 0;\r\n\tout2 = action == 0 ? 0 : current_portamento;\r\n\tout1 = peak_portamento;\r\n} else {\r\n\t// from max_porta down to 0\r\n\tout3 = peak_portamento;\r\n\tout2 = action == 0 ? peak_portamento : current_portamento;\r\n\tout2 = current_portamento;\r\n\tout1 = 0;\r\n}",
+													"code" : "// 0 - note on, 1 - reverse/unreverse\r\naction = in1;\r\nglobal_pitch, target_pitch = in2, in3;\r\ncurrent_portamento = in4;\r\n\r\npeak_portamento = global_pitch - target_pitch;\r\nif (action == 0) {\r\n\tout4 = 1; // gate is open on note on\r\n}\r\n\r\nif (reversed) {\r\n\t// from 0 to max_porta\r\n\tout3 = 0;\r\n\tout2 = action == 0 ? 0 : current_portamento;\r\n\tout1 = peak_portamento;\r\n} else {\r\n\t// from max_porta down to 0\r\n\tout3 = peak_portamento;\r\n\tout2 = action == 0 ? peak_portamento : current_portamento;\r\n\tout1 = 0;\r\n}",
 													"fontface" : 0,
 													"fontname" : "<Monospaced>",
 													"fontsize" : 12.0,
@@ -919,7 +919,7 @@
 
 											}
  ],
-										"originid" : "pat-2226",
+										"originid" : "pat-4198",
 										"saved_attribute_attributes" : 										{
 											"default_plcolor" : 											{
 												"expression" : ""
@@ -1188,7 +1188,7 @@
 
 							}
  ],
-						"originid" : "pat-2222",
+						"originid" : "pat-4194",
 						"styles" : [ 							{
 								"name" : "m4ldefault",
 								"parentstyle" : "",
@@ -1665,7 +1665,7 @@
 
 							}
  ],
-						"originid" : "pat-2232",
+						"originid" : "pat-4204",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -1922,7 +1922,7 @@
 
 							}
  ],
-						"originid" : "pat-2238",
+						"originid" : "pat-4210",
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
 								"expression" : ""
@@ -2131,7 +2131,7 @@
 
 							}
  ],
-						"originid" : "pat-2240",
+						"originid" : "pat-4212",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -2640,7 +2640,7 @@
 
 			}
  ],
-		"originid" : "pat-2212",
+		"originid" : "pat-4184",
 		"styles" : [ 			{
 				"name" : "m4ldefault",
 				"parentstyle" : "",
