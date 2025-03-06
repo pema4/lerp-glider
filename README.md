@@ -2,6 +2,8 @@
 
 Flexible MPE portamento for Ableton Live.
 
+![glider-large](images/glider-large.png)
+
 ## Setup
 
 ```shell
