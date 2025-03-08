@@ -4,7 +4,13 @@ Flexible MPE portamento effect for Ableton Live 12.
 
 ![glider-large](images/glider-large.png)
 
-Glider generates MPE pitch bend automations that mimic portamento, glissando, legato playing, analog-like detuning, arpeggios and much more. Additionally, you can chain multiple Gliders together for infinitely complex effects and interactions.
+Glider generates MPE pitch bend automations that mimic various pitch effects:
+- portamento, glissando, legato playing
+- analog oscillator drift, extreme detuning, chords mutation
+- arpeggios, resonators, note delays
+- and much more — imagination is your limit, Glider rewards exploration and messing around.
+
+Additionally, you can chain multiple Gliders together for infinitely complex effects and interactions.
 
 ## Setup
 

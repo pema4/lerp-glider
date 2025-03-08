@@ -10,9 +10,45 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 428.0, 469.0, 1526.0, 873.0 ],
+		"rect" : [ 34.0, 100.0, 1402.0, 758.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-41",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "" ],
+					"patching_rect" : [ 915.0, 165.0, 34.0, 22.0 ],
+					"text" : "sel 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-39",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "float", "bang" ],
+					"patching_rect" : [ 60.0, 585.0, 29.5, 22.0 ],
+					"text" : "t f b"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"comment" : "(float) Final pitch bend",
+					"id" : "obj-13",
+					"index" : 2,
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 525.0, 900.0, 30.0, 30.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-26",
 					"maxclass" : "newobj",
@@ -35,18 +71,6 @@
 					"patching_rect" : [ 1290.0, 405.0, 94.0, 22.0 ],
 					"text" : "Latched",
 					"varname" : "param[4]"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-19",
-					"linecount" : 4,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 300.0, 660.0, 191.0, 60.0 ],
-					"text" : "TODO: do not emit retrig immediately on frst note on.\nWhen done, 1st and 2nd steps should be swapped."
 				}
 
 			}
@@ -100,18 +124,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-79",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 1095.0, 750.0, 157.0, 22.0 ],
-					"text" : "buffer~ ---scale @samps 12"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-23",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -140,8 +152,8 @@
 					"id" : "obj-63",
 					"maxclass" : "newobj",
 					"numinlets" : 3,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
@@ -153,9 +165,33 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 106.0, 242.0, 314.0 ],
+						"rect" : [ 59.0, 106.0, 352.0, 314.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "bang" ],
+									"patching_rect" : [ 30.0, 90.0, 40.0, 22.0 ],
+									"text" : "t b f b"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "(float) Final pitch bend",
+									"id" : "obj-13",
+									"index" : 2,
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 135.0, 255.0, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-26",
 									"maxclass" : "newobj",
@@ -174,7 +210,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 90.0, 180.0, 49.0, 22.0 ],
+									"patching_rect" : [ 165.0, 180.0, 49.0, 22.0 ],
 									"text" : "list.reg"
 								}
 
@@ -186,7 +222,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 165.217388838529587, 104.782611161470413, 50.0, 22.0 ],
+									"patching_rect" : [ 195.0, 105.0, 50.0, 22.0 ],
 									"text" : "pack i 0"
 								}
 
@@ -211,7 +247,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "float" ],
 									"patching_rect" : [ 30.0, 30.0, 30.0, 30.0 ]
 								}
 
@@ -240,7 +276,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 165.217386871576309, 30.0, 30.0, 30.0 ]
+									"patching_rect" : [ 195.0, 30.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -258,6 +294,27 @@
 							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"source" : [ "obj-1", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-1", 2 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-58", 0 ],
 									"source" : [ "obj-19", 0 ]
@@ -287,16 +344,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
-									"order" : 1,
-									"source" : [ "obj-55", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-25", 0 ],
-									"order" : 0,
+									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-55", 0 ]
 								}
 
@@ -325,7 +373,7 @@
 
 							}
  ],
-						"originid" : "pat-39933",
+						"originid" : "pat-45663",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -336,7 +384,7 @@
 
 					}
 ,
-					"patching_rect" : [ 60.0, 615.0, 154.0, 22.0 ],
+					"patching_rect" : [ 60.0, 645.0, 154.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
 						"default_plcolor" : 						{
 							"expression" : ""
@@ -427,12 +475,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-27",
-					"linecount" : 5,
+					"linecount" : 7,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 105.0, 660.0, 180.0, 74.0 ],
-					"text" : "On retrigger:\n1. Send pitch bend\n2. Note Off\n3. Note On\n4. Update latched parameters"
+					"patching_rect" : [ 60.0, 735.0, 374.0, 100.0 ],
+					"text" : "On retrigger:\n1. Note Off\n2. Send pitch bend\n3. Note On\n4. Update latched parameters\n\nTODO: maybe swap steps 3 & 4"
 				}
 
 			}
@@ -454,21 +502,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 630.0, 795.0, 34.0, 22.0 ],
-					"text" : "sel 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-28",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 360.0, 165.0, 34.0, 22.0 ],
-					"text" : "sel 1"
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 584.90027043223381, 825.0, 64.09972956776619, 22.0 ],
+					"text" : "gate 2 1"
 				}
 
 			}
@@ -480,7 +516,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 60.0, 675.0, 30.0, 30.0 ]
+					"patching_rect" : [ 60.0, 690.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -667,7 +703,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1350.0, 227.0, 837.0, 654.0 ],
+						"rect" : [ 599.0, 204.0, 837.0, 654.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -1024,7 +1060,7 @@
 
 											}
  ],
-										"originid" : "pat-39945",
+										"originid" : "pat-45675",
 										"saved_attribute_attributes" : 										{
 											"default_plcolor" : 											{
 												"expression" : ""
@@ -1300,7 +1336,7 @@
 
 							}
  ],
-						"originid" : "pat-39941",
+						"originid" : "pat-45671",
 						"styles" : [ 							{
 								"name" : "m4ldefault",
 								"parentstyle" : "",
@@ -1370,18 +1406,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 870.0, 30.0, 30.0, 30.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"comment" : "(float) Final pitch bend",
-					"id" : "obj-13",
-					"index" : 2,
-					"maxclass" : "outlet",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1035.0, 810.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -1777,7 +1801,7 @@
 
 							}
  ],
-						"originid" : "pat-39951",
+						"originid" : "pat-45681",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -1836,7 +1860,7 @@
 						}
 ,
 						"classnamespace" : "dsp.gen",
-						"rect" : [ 59.0, 100.0, 1285.0, 770.0 ],
+						"rect" : [ 59.0, 100.0, 1285.0, 758.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -1869,7 +1893,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1110.0, 210.0, 82.0, 22.0 ],
+									"patching_rect" : [ 900.0, 270.0, 82.0, 22.0 ],
 									"text" : "param input 0"
 								}
 
@@ -1881,7 +1905,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1110.0, 165.0, 117.0, 22.0 ],
+									"patching_rect" : [ 900.0, 225.0, 117.0, 22.0 ],
 									"text" : "param scalelength 0"
 								}
 
@@ -1893,7 +1917,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1110.0, 120.0, 83.0, 22.0 ],
+									"patching_rect" : [ 900.0, 180.0, 83.0, 22.0 ],
 									"text" : "param retrig 0"
 								}
 
@@ -1916,14 +1940,14 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1110.0, 75.0, 101.0, 22.0 ],
+									"patching_rect" : [ 900.0, 135.0, 101.0, 22.0 ],
 									"text" : "param quantize 0"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"code" : "quantize(in_note, scale_length) {\n\tBuffer scale(\"---scale\");\n\n\tmin_distance = 12;\n\tbest_offset = 127;\n\tfor (i = 0; i < scale_length && min_distance > 0.5; i += 1) {\n\t\tsd = peek(scale, i);\n\n\t\t// 12 * 100 > 127, so (12 * 100 + sd - in_note) % 12 is always positive\r\n\t\t// that way we don't need to deal with negative remainders\n\t\toffset = (12 * 100 + sd - in_note) % 12;\n\t\tif (offset >= 6) offset -= 12;\n\t\tdistance = abs(offset);\n\t\tif (distance < min_distance) {\n\t\t\tmin_distance = distance;\n\t\t\tbest_offset = offset;\n\t\t}\n\t}\n\n\treturn in_note + best_offset;\t\n}\n\nHistory prev_glide;\naction, glide, target_pitch, pitch_bend = in1, in2, in3, in4;\n\n// apply amount and inversion\nglide *= amount;\n\r\n// if input processing is enabled - mix in the pitch bend\r\nif (input) glide += pitch_bend * 48;\r\n\n// apply quantization to glide (or to glide + pitch_bend)\nif (quantize) {\n\tunquantized = glide + target_pitch;\n\tquantized = quantize(unquantized, scalelength);\n\tglide = quantized - target_pitch;\n}\n\n// scale to PB range (-1..+1)\nglide /= 48;\n\r\n// output 1 if quantized output did change\r\n// TODO: do not emit retrigger immediately when action = 1\nif (quantize && retrig) {\n\tchanged = abs(glide - prev_glide) > 0.00001;\n\tout1 = changed;\n}\r\nprev_glide = glide;\n\r\n// if input processing is disabled - mix in the pitch bend\r\nif (!input) glide += pitch_bend;\nout2 = glide;\n",
+									"code" : "quantize(in_note, scale_length) {\n\tBuffer scale(\"---scale\");\n\n\tmin_distance = 12;\n\tbest_offset = 127;\n\tfor (i = 0; i < scale_length && min_distance > 0.5; i += 1) {\n\t\tsd = peek(scale, i);\n\n\t\t// 12 * 100 > 127, so (12 * 100 + sd - in_note) % 12 is always positive\r\n\t\t// that way we don't need to deal with negative remainders\n\t\toffset = (12 * 100 + sd - in_note) % 12;\n\t\tif (offset >= 6) offset -= 12;\n\t\tdistance = abs(offset);\n\t\tif (distance < min_distance) {\n\t\t\tmin_distance = distance;\n\t\t\tbest_offset = offset;\n\t\t}\n\t}\n\n\treturn in_note + best_offset;\t\n}\n\nHistory prev_glide, initial_glide;\naction, glide, target_pitch, pitch_bend = in1, in2, in3, in4;\n\n// apply amount and inversion\nglide *= amount;\n\r\n// if input processing is enabled - mix in the pitch bend\r\nif (input) glide += pitch_bend * 48;\r\n\n// apply quantization to glide (or to glide + pitch_bend)\nif (quantize) {\n\tunquantized = glide + target_pitch;\n\tquantized = quantize(unquantized, scalelength);\n\tglide = quantized - target_pitch;\n}\n\n// scale to PB range (-1..+1)\nglide /= 48;\n\r\n// output 1 if quantized glide did change\r\n// do not output if the glide did not change since the note start\r\nif (action == 1) initial_glide = glide;\nif (quantize && retrig && glide != initial_glide) {\n\tchanged = abs(glide - prev_glide) > 0.00001;\n\tout2 = changed;\n}\r\nprev_glide = glide;\n\r\n// if input processing is disabled - mix in the pitch bend\r\nif (!input) glide += pitch_bend;\nout1 = glide;\r\nout2 = 2 - out2; // will be used in a gate\n",
 									"fontface" : 0,
 									"fontname" : "<Monospaced>",
 									"fontsize" : 12.0,
@@ -1955,7 +1979,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1110.0, 30.0, 96.0, 22.0 ],
+									"patching_rect" : [ 900.0, 90.0, 96.0, 22.0 ],
 									"text" : "param amount 1"
 								}
 
@@ -2027,7 +2051,7 @@
 
 							}
  ],
-						"originid" : "pat-39957",
+						"originid" : "pat-45687",
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
 								"expression" : ""
@@ -2236,7 +2260,7 @@
 
 							}
  ],
-						"originid" : "pat-39959",
+						"originid" : "pat-45689",
 						"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
@@ -2440,7 +2464,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-14", 1 ],
 					"midpoints" : [ 969.5, 150.954769691568799, 126.5, 150.954769691568799 ],
-					"order" : 4,
+					"order" : 3,
 					"source" : [ "obj-2", 1 ]
 				}
 
@@ -2456,15 +2480,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-176", 1 ],
-					"order" : 1,
-					"source" : [ "obj-2", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-26", 0 ],
-					"midpoints" : [ 969.5, 150.1484375, 1374.5, 150.1484375 ],
 					"order" : 0,
 					"source" : [ "obj-2", 1 ]
 				}
@@ -2472,9 +2487,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-28", 0 ],
-					"midpoints" : [ 969.5, 150.990100800991058, 369.5, 150.990100800991058 ],
-					"order" : 3,
+					"destination" : [ "obj-41", 0 ],
+					"order" : 1,
 					"source" : [ "obj-2", 1 ]
 				}
 
@@ -2544,15 +2558,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"source" : [ "obj-28", 0 ]
+					"destination" : [ "obj-13", 0 ],
+					"source" : [ "obj-29", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-61", 1 ],
-					"midpoints" : [ 639.5, 826.810413300991058, 30.476910829544067, 826.810413300991058, 30.476910829544067, 525.990100800991058, 95.5, 525.990100800991058 ],
+					"midpoints" : [ 594.40027043223381, 858.80859375, 24.5, 858.80859375, 24.5, 524.8515625, 95.8984375, 524.8515625, 95.8984375, 537.0, 95.5, 537.0 ],
 					"source" : [ "obj-29", 0 ]
 				}
 
@@ -2594,15 +2608,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-13", 0 ],
+					"destination" : [ "obj-29", 0 ],
 					"source" : [ "obj-36", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-29", 0 ],
-					"midpoints" : [ 639.5, 782.244007050991058 ],
+					"destination" : [ "obj-29", 1 ],
 					"source" : [ "obj-36", 0 ]
 				}
 
@@ -2611,6 +2624,21 @@
 				"patchline" : 				{
 					"destination" : [ "obj-36", 0 ],
 					"source" : [ "obj-38", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"midpoints" : [ 80.0, 615.337757050991058, 46.012067079544067, 615.337757050991058, 46.012067079544067, 196.400257050991058, 369.5, 196.400257050991058 ],
+					"source" : [ "obj-39", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-63", 0 ],
+					"source" : [ "obj-39", 0 ]
 				}
 
 			}
@@ -2625,6 +2653,24 @@
 				"patchline" : 				{
 					"destination" : [ "obj-36", 0 ],
 					"source" : [ "obj-40", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"midpoints" : [ 924.5, 196.9296875, 369.5, 196.9296875 ],
+					"order" : 1,
+					"source" : [ "obj-41", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-26", 0 ],
+					"midpoints" : [ 924.5, 196.87890625, 1374.5, 196.87890625 ],
+					"order" : 0,
+					"source" : [ "obj-41", 0 ]
 				}
 
 			}
@@ -2692,17 +2738,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"midpoints" : [ 69.5, 573.986194550991058, 46.012067079544067, 573.986194550991058, 46.012067079544067, 196.400257050991058, 369.5, 196.400257050991058 ],
-					"order" : 0,
-					"source" : [ "obj-61", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-63", 0 ],
-					"order" : 1,
+					"destination" : [ "obj-39", 0 ],
 					"source" : [ "obj-61", 0 ]
 				}
 
@@ -2711,6 +2747,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-36", 0 ],
 					"source" : [ "obj-62", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 0 ],
+					"source" : [ "obj-63", 1 ]
 				}
 
 			}
@@ -2802,7 +2845,7 @@
 
 			}
  ],
-		"originid" : "pat-39931",
+		"originid" : "pat-45659",
 		"styles" : [ 			{
 				"name" : "m4ldefault",
 				"parentstyle" : "",
