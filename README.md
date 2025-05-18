@@ -15,7 +15,7 @@ Additionally, you can chain multiple Gliders together for infinitely complex eff
 ## Setup
 
 ```shell
-git clone --recursive https://github.com/pema4/lerpmusic-glider
+git clone --recursive https://github.com/pema4/lerp-glider
 ```
 
 Additionally you can install dev tooling:
