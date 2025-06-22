@@ -406,6 +406,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
+									"disabled" : 1,
 									"source" : [ "obj-1", 3 ]
 								}
 
@@ -592,7 +593,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 225.0, 555.0, 249.0, 74.0 ],
-					"text" : "On retrigger:\n1. Emit final pitch bend\n2. Emit Note Off\n3. Emit initial pitch bend, slide and pressure\n4. Emit Note On"
+					"text" : "On retrigger:\n1. Emit final pitch bend - no?\n2. Emit Note Off\n3. Emit initial pitch bend, slide and pressure\n4. Emit Note On"
 				}
 
 			}
