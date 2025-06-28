@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 4,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -12,6 +12,7 @@
 		"classnamespace" : "box",
 		"rect" : [ 221.0, 164.0, 1031.0, 591.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
+		"integercoordinates" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-6",
@@ -111,12 +112,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-23",
-					"linecount" : 5,
+					"linecount" : 10,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 450.0, 30.0, 559.0, 74.0 ],
-					"text" : "Messages:\nbang - outputs current ramp value\nf - jump to value immediately\nlist f f - first float sets ramp target value, second float - ramp duration\nduration f - change the ramp speed, remaining ramp duration will be scaled according to new duration"
+					"patching_rect" : [ 480.0, 30.0, 559.0, 141.0 ],
+					"text" : "Messages:\nbang - outputs current ramp value\nf - jump to value immediately\nlist f f - first float sets ramp target value, second float - ramp duration\nduration f - change the ramp speed, remaining ramp duration will be scaled according to new duration. Does not output current value.\n\nUnlike regular line, lazyline does not have built in metronome. Instead, it reports its current value on every incoming message. Lazyline relies on event timing — so in order to work correctly, incoming messages should come from audio/scheduler thread."
 				}
 
 			}
@@ -181,7 +182,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -189,6 +190,7 @@
 						"classnamespace" : "dsp.gen",
 						"rect" : [ 59.0, 106.0, 1254.0, 634.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"integercoordinates" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-6",
@@ -348,7 +350,6 @@
 
 							}
  ],
-						"originid" : "pat-1011",
 						"saved_attribute_attributes" : 						{
 							"default_plcolor" : 							{
 								"expression" : ""
@@ -641,7 +642,6 @@
 
 			}
  ],
-		"originid" : "pat-1009",
 		"toolbaradditions" : [ "packagemanager", "browsegendsp" ],
 		"saved_attribute_attributes" : 		{
 			"default_plcolor" : 			{

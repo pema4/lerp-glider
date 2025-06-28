@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 706.0, 288.0, 1360.0, 874.0 ],
+		"rect" : [ 76.0, 100.0, 1360.0, 762.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"integercoordinates" : 1,
 		"boxes" : [ 			{
@@ -177,9 +177,9 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 435.0, 240.0, 79.0, 22.0 ],
+					"patching_rect" : [ 435.0, 240.0, 98.0, 22.0 ],
 					"style" : "m4ldefault",
-					"text" : "r ---amount-a"
+					"text" : "r ---full-amount-a"
 				}
 
 			}
@@ -588,12 +588,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-27",
-					"linecount" : 5,
+					"linecount" : 8,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 225.0, 555.0, 249.0, 74.0 ],
-					"text" : "On retrigger:\n1. Emit final pitch bend - no?\n2. Emit Note Off\n3. Emit initial pitch bend, slide and pressure\n4. Emit Note On"
+					"patching_rect" : [ 225.0, 555.0, 255.0, 114.0 ],
+					"text" : "On retrigger:\n1. Emit Note Off\n2. Emit current pitch bend, slide and pressure\n3. Emit Note On\n\nTODO: maybe send final pitch bend before Note Off? It does not work the way I expected, it may be worth investigating."
 				}
 
 			}
@@ -664,8 +664,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 60.0, 390.0, 30.0, 22.0 ],
-					"text" : "*",
+					"patching_rect" : [ 60.0, 390.0, 29.5, 22.0 ],
+					"text" : "&&",
 					"varname" : "param[3]"
 				}
 
