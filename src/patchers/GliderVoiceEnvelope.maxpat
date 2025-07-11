@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 76.0, 100.0, 1360.0, 762.0 ],
+		"rect" : [ 76.0, 100.0, 1360.0, 761.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"integercoordinates" : 1,
 		"boxes" : [ 			{
@@ -592,7 +592,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 225.0, 555.0, 255.0, 114.0 ],
+					"patching_rect" : [ 225.0, 555.0, 258.0, 114.0 ],
 					"text" : "On retrigger:\n1. Emit Note Off\n2. Emit current pitch bend, slide and pressure\n3. Emit Note On\n\nTODO: maybe send final pitch bend before Note Off? It does not work the way I expected, it may be worth investigating."
 				}
 
@@ -623,13 +623,12 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "(int) Raw MIDI bytes",
 					"id" : "obj-6",
-					"index" : 1,
-					"maxclass" : "outlet",
+					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 60.0, 1140.0, 30.0, 30.0 ]
+					"patching_rect" : [ 60.0, 1140.0, 47.0, 22.0 ],
+					"text" : "midiout"
 				}
 
 			}
@@ -755,18 +754,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-7",
-									"maxclass" : "button",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 495.0, 285.0, 24.0, 24.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-13",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -796,10 +783,10 @@
 									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
-									"patching_rect" : [ 30.0, 180.0, 22.0, 22.0 ],
-									"text" : "t 1"
+									"numoutlets" : 2,
+									"outlettype" : [ "int", "bang" ],
+									"patching_rect" : [ 30.0, 180.0, 32.0, 22.0 ],
+									"text" : "t 1 b"
 								}
 
 							}
@@ -1157,7 +1144,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 330.0, 555.0, 30.0, 30.0 ]
+									"patching_rect" : [ 210.0, 555.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -1294,24 +1281,15 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-15", 0 ],
-									"source" : [ "obj-7", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"order" : 1,
 									"source" : [ "obj-8", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
-									"order" : 0,
-									"source" : [ "obj-8", 0 ]
+									"destination" : [ "obj-15", 0 ],
+									"source" : [ "obj-8", 1 ]
 								}
 
 							}
